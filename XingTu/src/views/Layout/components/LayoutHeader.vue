@@ -13,7 +13,7 @@
                 </ul>
             </div>
             <div class="input_search">
-            <input placeholder="我要去">
+            <input placeholder="我要去...">
             </div>
             <img src="@/assets/images/search.jpg" height="40px">
             </div>

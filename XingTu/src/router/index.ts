@@ -3,9 +3,11 @@ import Login from '@/views/Login/index.vue'
 import Layout from '@/views/Layout/index.vue'
 import Home from '@/views/Home/index.vue'
 import Category from '@/views/Category/index.vue'
+import Community from '@/views/Community/index.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    //home界面
     {
       path: '/',
       redirect: '/home',
@@ -20,8 +22,13 @@ const router = createRouter({
       }
     ]
     },
+    //社区路由
     {
-      path: '/Login',
+      path: '/community',
+      component: Community
+    },
+    {
+      path: '/login',
       component: Login
     }
   ]

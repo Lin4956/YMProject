@@ -1,54 +1,70 @@
-
 <template>
-  <nav class="nav">
-    <div class="logo"><img src="@/assets/images/logo.jpg " height="53px" width="100px"></div>
-    <div class="top_left">
+  <div class="stick"/>
+  <div class="nav">
+    <div class="logo"><img src="@/assets/images/logo.jpg " height="53px" width="70px"></div>
+    <div class="top">
       <ul>
-          <li><router-link to="/home" active-class="choose">首页</router-link></li>
-          <li><router-link to="/destination" active-class="choose">目的地</router-link></li>
-          <li><router-link to="/hotel" active-class="choose">酒店</router-link></li>
-          <li><router-link to="/community" active-class="choose">社区攻略</router-link></li>
+        <li v-for="item in leftData" :key="item.id"><router-link :to="item.address" active-class="choose">{{item.name}}</router-link></li>
+          <div class="container"> 
+            <ul>
+              <li v-for="item in rightData" :key="item.id"><router-link :to="item.address" active-class="choose">{{item.name}}</router-link></li>
+              <!-- <button @click="store.add"></button> -->
+            </ul>
+          </div>
       </ul>
     </div>
-    <div class="container"> 
-      <ul>
-        <li><router-link to="#" active-class="choose">请登录</router-link></li>
-        <li><router-link to="#" active-class="choose">帮助中心</router-link></li>
-        <li><router-link to="#" active-class="choose">关于我们</router-link></li>
-      </ul>
-    </div>
-  </nav>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { useScroll } from '@vueuse/core'
+import { navCounterStore } from '@/stores/counter'
+import { onMounted } from 'vue';
+const store = navCounterStore()
+const {leftData,rightData} = store//pinia的导航栏数据
 
+//获取页面滚动
+const {y} = useScroll(window)
 </script>
 
 <style lang="scss" scoped>
+.stick{
+  height: 53px;
+}
 .nav{
+  position: fixed;
+  top: 0px;
+  z-index: 1;
   background-color: #fff;
   display: flex;
   .logo{
     margin-left: 150px;
   }
-  .top_left{
-    float: left;
+  .top{
     width: 50%;
     ul{
       display: flex;
       justify-content: center;
+      text-align: center;
+      cursor: pointer;
       li{
         border-left: 0;
         line-height: 53px;
+        width: 150px;
       }
     }
   }
+  li:hover{
+    a{
+        color: rgb(67, 137, 235);
+    }
+  }
+  .container{
     ul{
-    display: flex;
-    height: 53px;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 20px;
+      display: flex;
+      height: 53px;
+      justify-content: flex-end;
+      align-items: center;
     li{
       width:60px;
       text-align: center;
@@ -57,15 +73,24 @@
       line-height: 53px;
     }
   }
-
+  
   li:hover{
-    color: rgb(67, 137, 235);
+    a{
+        color: rgb(67, 137, 235);
+    }
     cursor: pointer;  
     border-bottom: 2px solid rgb(67, 137, 235);
     }
-
   }
-  .top_left a.choose{
+  }
+  .top a.choose{
+    display: block;
+    color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    background-color: rgb(67, 137, 235);
+  }
+  .top a.choose:hover{
     display: block;
     color: rgb(255, 255, 255);
     height: 100%;

@@ -1,9 +1,40 @@
 <template>
-    <div>我是Home</div>
+    <div class="app_home">
+        <div class="recommend">
+            <recommendVue/>
+        </div>
+        <div class="tag">
+            <tagVue/>
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
-
+import recommendVue from "./components/recommend.vue";
+import tagVue from "./components/tag.vue";
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.app_home{
+    display: inline-block;
+    background-color: skyblue;
+    margin: 0 120px;
+    padding-top: 30px;
+    width: 1020px;
+    .recommend{
+        float: left;
+        margin-right: 20px;
+        height: 500px;
+        width: 300px;
+        background-color: #fff;
+        
+    }
+    .tag{
+        float: left;
+        color: white;
+        width: 700px;
+        height: 1500px;
+        background-color: black;
+    }
+}
+</style>
