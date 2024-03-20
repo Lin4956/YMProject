@@ -22,6 +22,11 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  }, // 配置前端服务地址和端口,默认端口是5173
+  server: {
+    host: '0.0.0.0',
+    port: 8000,
+    // 是否开启 https
   },
   css: {
     preprocessorOptions: {

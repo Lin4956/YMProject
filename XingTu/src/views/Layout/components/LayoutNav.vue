@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { useScroll } from '@vueuse/core'
-import { navCounterStore } from '@/stores/counter'
+import { navCounterStore } from '@/stores/nav/counter'
 import { onMounted } from 'vue';
 const store = navCounterStore()
 const {leftData,rightData} = store//pinia的导航栏数据
@@ -97,4 +97,4 @@ const {y} = useScroll(window)
     width: 100%;
     background-color: rgb(67, 137, 235);
   }
-</style>
+</style>@/stores/nav/counter

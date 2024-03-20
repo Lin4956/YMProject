@@ -20,7 +20,7 @@ import tagVue from "./components/tag.vue";
     background-color: skyblue;
     margin: 0 120px;
     padding-top: 30px;
-    width: 1020px;
+    width: 85%;
     .recommend{
         float: left;
         margin-right: 20px;
@@ -30,9 +30,9 @@ import tagVue from "./components/tag.vue";
         
     }
     .tag{
-        float: left;
+        float: right;
         color: white;
-        width: 700px;
+        width: 750px;
         height: 1500px;
         background-color: black;
     }
