@@ -22,6 +22,10 @@ const router = createRouter({
       }
     ]
     },
+    {
+      path: '/home',
+      component: Home
+    },
     //社区路由
     {
       path: '/community',

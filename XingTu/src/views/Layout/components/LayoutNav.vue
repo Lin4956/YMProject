@@ -97,4 +97,4 @@ const {y} = useScroll(window)
     width: 100%;
     background-color: rgb(67, 137, 235);
   }
-</style>@/stores/nav/counter
+</style>
