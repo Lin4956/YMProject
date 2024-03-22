@@ -2,7 +2,7 @@
     <div class="talk_main_box">
         <div class="left">
             <h1>首页</h1>
-            <Classify></Classify>
+            <CategoryList></CategoryList>
         </div>
         <div class="main">1</div>
         <div class="right">1</div>
@@ -10,7 +10,14 @@
 </template>
 
 <script setup lang="ts">
-import Classify from './classify.vue';
+import CategoryList from './categorylist.vue';
+import { getCategoryList } from '@/apis/community'
+        async function getALLCategoryList(){
+            await getCategoryList().then(res=>{
+                console.log(1);
+            })
+        }
+getALLCategoryList()
 </script>
 
 <style scoped lang="scss">
